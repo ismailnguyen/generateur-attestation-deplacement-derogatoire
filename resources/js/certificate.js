@@ -15047,7 +15047,7 @@ parcelRequire = function(e, r, t, n) {
         "./renderer/svg-tag.js": "RP6X"
     }],
     "W9IH": [function(require, module, exports) {
-        module.exports = "certificate.84dda806.pdf";
+        module.exports = "./resources/docs/certificate.pdf";
     }, {}],
     "Sr7R": [function(require, module, exports) {
 
@@ -15073,7 +15073,7 @@ parcelRequire = function(e, r, t, n) {
         require("bootstrap/dist/css/bootstrap.min.css");
         var r = require("pdf-lib"),
             a = c(require("qrcode")),
-            o = c(require("./certificate.pdf"));
+            o = c(require("../docs/certificate.pdf"));
 
         function c(e) {
             return e && e.__esModule ? e : {
@@ -15341,7 +15341,7 @@ parcelRequire = function(e, r, t, n) {
         "bootstrap/dist/css/bootstrap.min.css": "aJJs",
         "pdf-lib": "o7r9",
         "qrcode": "AuoH",
-        "./certificate.pdf": "W9IH",
+        "../docs/certificate.pdf": "W9IH",
         "./main.css": "Sr7R"
     }]
 }, {}, ["yKCw"], null)
