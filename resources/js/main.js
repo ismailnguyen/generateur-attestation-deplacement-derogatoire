@@ -41,9 +41,7 @@ function restoreReason() {
 }
 
 $('#button-generate').click(function () {
-    if (!hasProfile())
-        saveProfile();
-
+    saveProfile();
     saveReason();
 });
 
@@ -51,8 +49,5 @@ $(document).ready(function () {
     if (hasProfile()) {
         loadProfile();
         restoreReason();
-        $('#personal-informations').hide()
-    } else {
-        $('#personal-informations').show()
     }
 })
