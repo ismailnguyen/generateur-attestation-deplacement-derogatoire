@@ -137,6 +137,7 @@
     </div>
     
     <p class="label-mi"> Ministère de l'Intérieur - DNUM - SDIT </p> <img class="center" src="./resources/img/logo_dnum.02e567b8.svg" alt="logo dnum"> </div>
+    
     <footer class="main-footer">
         <div class="footer-links"> <a href="https://media.interieur.gouv.fr/deplacement-covid-19/confidentialite.html" title="Confidentialité - nouvelle page" target="_blank" class="footer-link">Confidentialité</a> <a href="https://www.interieur.gouv.fr/Infos-du-site/Mentions-legales" title="Mentions légales - nouvelle page" target="_blank" class="footer-link">Mentions légales</a> <a href="https://www.gouvernement.fr/info-coronavirus" title="Information du gouvernement sur le Covid-19 - nouvelle page" target="_blank" class="footer-link">Informations du gouvernement sur le Covid-19</a>
             <div class="footer-link">Plus d’infos au<a class="num-08" href="tel:0800130000"> 0 800 130 000</a></div>
@@ -145,69 +146,7 @@
     </footer>
     
     <script src="./resources/js/jquery.min.js"></script>
-
-    <script>
-            
-        const $$ = (...args) => document.querySelectorAll(...args)
-        function hasProfile() {
-            return localStorage.getItem('firstname') !== null
-        }
-
-        function saveProfile() {
-            for (field of $$('#form-profile input:not([disabled]):not([type=checkbox])')) {
-                localStorage.setItem(field.id.substring('field-'.length), field.value)
-            }
-        }
-
-        function loadProfile() {
-            const fields = getProfile();
-
-            for (field of Object.keys(fields)) {
-                $(`#field-${field}`).val(fields[field])
-            }
-        }
-
-        function getProfile() {
-            const fields = {}
-            for (let i = 0; i < localStorage.length; i++){
-                const name = localStorage.key(i)
-                fields[name] = localStorage.getItem(name)
-            }
-            return fields
-        }
-        
-        function saveReason() {
-            const value = $('input[name="field-reason"]:checked').val()
-            localStorage.setItem('last-reason', value)
-        }
-
-        function restoreReason() {
-            const value = localStorage.getItem('last-reason')
-            if (value === null)
-                return
-
-            $(`#checkbox-${value}`).attr('checked', true)
-        }
-
-        $('#button-generate').click(function () {
-            if (!hasProfile())
-                saveProfile();
-
-            saveReason();
-        });
-
-        $(document).ready(function () {
-            if (hasProfile()) {
-                loadProfile();
-                restoreReason();
-                $('#personal-informations').hide()
-            } else {
-                $('#personal-informations').show()
-            }
-        })
-
-    </script>
-    
+    <script src="./resources/js/main.js"></script>
     <script src="./resources/js/certificate.js"></script>
     
 </body>
